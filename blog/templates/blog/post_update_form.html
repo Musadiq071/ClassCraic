@@ -1,0 +1,48 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<article class="content-section p-4 shadow-sm rounded mb-4" style="background: var(--card-bg); transition: all 0.3s;">
+    <div class="d-flex align-items-start mb-3">
+        <img src="{{ object.auhtor.profile.image.url }}" class="rounded-circle me-3" width="70" height="70" alt="{{ object.auhtor.username }}">
+
+        <div class="flex-grow-1">
+            <a href="{% url 'user-posts' object.auhtor.username %}" class="fw-bold text-decoration-none fs-5">{{ object.auhtor.username }}</a><br>
+            <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+        </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_title" class="form-label fw-semibold"></label>
+            {{ form.title|as_crispy_field }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_content" class="form-label fw-semibold"></label>
+            {{ form.content|as_crispy_field }}
+        </div>
+
+        {% if object.attachment %}
+        <div class="mb-3">
+            <p class="mb-1">Current Attachment:</p>
+            {% if object.attachment.url|lower|slice:"-4:" == ".pdf" %}
+                <a href="{{ object.attachment.url }}" class="btn btn-outline-primary btn-sm" target="_blank">📄 Download PDF</a>
+            {% else %}
+                <img src="{{ object.attachment.url }}" class="img-fluid rounded mt-2" alt="Attachment">
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="mb-3">
+            <label for="id_attachment" class="form-label fw-semibold"></label>
+            {{ form.attachment|as_crispy_field }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update Post</button>
+    </form>
+</article>
+
+{% endblock content %}

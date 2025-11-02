@@ -1,4 +1,55 @@
 {% extends "blog/base.html" %}
 {% block content %}
-<h1>Blog home</h1 >
+
+<div class="container py-5" style="max-width: 800px;">
+    <div class="card shadow-sm rounded p-4" style="background: var(--card-bg, #fff);">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">About the Author and the App</h2>
+            <h4 class="text-primary">Musadiq Hussain</h4>
+        </div>
+
+        <p class="fs-6">
+            Hello! My name is <strong>Musadiq Hussain</strong>, and I am a <strong>full stack Python developer</strong> currently in my fourth year of 
+            <strong>BSc Computer Science</strong> at <strong>Dublin Business School, Dublin</strong>. I created this Django app as the first step toward building a comprehensive platform for students—a place where peers can <strong>share study materials, discuss ideas, participate in social activities, and build meaningful friendships</strong>.
+        </p>
+
+        <h5 class="mt-4 fw-semibold">Features of the App</h5>
+        <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">User Management: Create/update profiles, upload a profile picture, change passwords, and recover accounts.</li>
+            <li class="list-group-item">Post Management: Create, edit, delete posts with attachments (images/PDFs).</li>
+            <li class="list-group-item">Interactions: Comment on posts, delete your own comments, and like posts.</li>
+            <li class="list-group-item">Media Support: Upload images or PDFs as attachments for posts.</li>
+            <li class="list-group-item">Storage & Deployment: Media stored on <strong>S3</strong>, app deployed on <strong>Heroku</strong>.</li>
+            <li class="list-group-item">Authentication & Security: Secure login/logout and privacy-focused features.</li>
+        </ul>
+
+        <h5 class="mt-4 fw-semibold">Future Plans</h5>
+        <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">Advanced social features: Follow/unfollow users, notifications, and activity feeds.</li>
+            <li class="list-group-item">Groups & Study Communities: Join groups based on subjects or interests.</li>
+            <li class="list-group-item">Enhanced media support: More file types and better in-app previews.</li>
+            <li class="list-group-item">Real-time collaboration: Chat functionality and live discussion threads.</li>
+            <li class="list-group-item">Mobile-friendly UI: Fully responsive and intuitive design.</li>
+        </ul>
+
+        <h5 class="mt-4 fw-semibold">Get in Touch</h5>
+        <p class="fs-6 mb-1">
+            I’d love to hear from you—whether you want to <strong>collaborate on future projects</strong>, <strong>share suggestions</strong>, or <strong>connect professionally</strong>:
+        </p>
+        <ul class="list-unstyled fs-6">
+            <li> Email: <a href="mailto:your-email@example.com">musadiqshahani@yahoo.com.com</a></li>
+            <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/musadiq-hussain/" target="_blank">www.linkedin.com/in/musadiq-hussain</a></li>
+            <li>GitHub: <a href="https://github.com/Musadiq071" target="_blank">github.com/Musadiq071 </a></li>
+        </ul>
+
+        <p class="mt-3 fs-6">
+            Your feedback, contributions, and ideas are always welcome as we work toward building a vibrant online student community together!
+        </p>
+        <p class="mt-3 fs-6 fw-semibold text-center">
+            Thank you for visiting! I truly appreciate your time and interest in this project. 😊
+        </p>
+    </div>
+</div>
+
 {% endblock content %}
+

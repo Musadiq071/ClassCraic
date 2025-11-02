@@ -1,30 +1,34 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="content-section">
-	<div class="media">
-		<img class="rounded-circle account-img" src="{{ user.profile.image.url}}" >
-		<div class="media-body">
-			<h2 class="account-heading">{{ user.username }}</h2>
+<div class="container py-5">
+  <div class="row">
+    <!-- LEFT: Profile Info -->
+    <div class="col-md-4 text-center mb-4">
+      <div class="position-relative d-inline-block">
+        <img src="{{ user.profile.image.url }}" 
+             alt="{{ user.username }} profile picture"
+             class="rounded-circle shadow-lg border border-3 border-light"
+             style="width: 180px; height: 180px; object-fit: cover;">
+      </div>
+      <h2 class="fw-bold mt-3">{{ user.username }}</h2>
+      <p class="text-muted">{{ user.email }}</p>
+    </div>
 
-			<p class="text-secondary">{{ user.email }}</p>
-		</div>
-	</div>
-	<!-- FORM HERE -->
-
-	<form method='POST' enctype="multipart/form-data" >
-		{% csrf_token %} 
-
-		<fieldset class="form-group" >
-			<legend class="border-bottom mb-4" >
-			Profile info </legend>
-			{{ u_form|crispy }}
-			{{ p_form|crispy }}
-		</fieldset>
-		<div class="form-group" > 
-			<button class="btn btn-outline-info", type="submit" >Update </button>
-		</div>
-	</form>
-
-</div>	
+    <!-- RIGHT: Edit Form -->
+    <div class="col-md-8">
+      <h4 class="fw-semibold mb-3 border-bottom pb-2">Edit Profile</h4>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+        <div class="mt-3">
+          <button class="btn btn-primary btn-lg fw-semibold" type="submit">
+            <i class="bi bi-arrow-repeat me-1"></i> Update Profile
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock content %}
