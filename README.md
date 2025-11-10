@@ -86,10 +86,11 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 ```
-Environment Variables
+##  Environment Setup
 
-Create a .env file in the root directory with the following:
+Create a `.env` file in the root directory with the following content:
 
+```bash
 SECRET_KEY=your_django_secret_key
 DEBUG=True
 EMAIL_HOST_USER=your_email@gmail.com
@@ -98,23 +99,27 @@ AWS_ACCESS_KEY_ID=your_aws_key
 AWS_SECRET_ACCESS_KEY=your_aws_secret
 AWS_STORAGE_BUCKET_NAME=your_s3_bucket
 AWS_S3_REGION_NAME=your_s3_region
+```
 
-
-Run Migrations
+## Run Migrations
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
-Create Superuser (Optional)
+### Create Superuser (Optional)
+```bash
 python manage.py createsuperuser
-
-Run the Server
+```
+## Run the Server
+```bash
 python manage.py runserver
-
+```
 
 Visit http://127.0.0.1:8000/
  to see the app.
 
-Usage
+## Usage
 
 Register multiple users to simulate social interaction.
 
@@ -126,7 +131,7 @@ Reset passwords using the “Forgot Password” link.
 
 Explore other user profiles and posts.
 
-Contributing
+## Contributing
 
 Contributions are welcome! You can:
 
@@ -136,16 +141,13 @@ Collaborate: Contact me for joint projects or feature additions.
 
 Fix bugs or add features: Open issues or submit pull requests.
 
-Contact
+## Contact
 
 Musadiq Hussain
 
 Email: musadiqshahani@yahoo.com
-
-GitHub: Musadiq071
-
 LinkedIn: Musadiq Hussain
 
-License
+## License
 
 This project is licensed under the MIT License.
