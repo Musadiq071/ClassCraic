@@ -71,3 +71,81 @@ Follow these steps to run the project locally:
 ```bash
 git clone https://github.com/Musadiq071/ClassCraic.git
 cd ClassCraic
+```
+## Local Setup & Usage
+
+### Create a Virtual Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+```
+##Install Dependencies
+
+```bash
+pip install -r requirements.txt
+
+```
+Environment Variables
+
+Create a .env file in the root directory with the following:
+
+SECRET_KEY=your_django_secret_key
+DEBUG=True
+EMAIL_HOST_USER=your_email@gmail.com
+EMAIL_HOST_PASSWORD=your_email_password_or_app_password
+AWS_ACCESS_KEY_ID=your_aws_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret
+AWS_STORAGE_BUCKET_NAME=your_s3_bucket
+AWS_S3_REGION_NAME=your_s3_region
+
+
+Run Migrations
+python manage.py makemigrations
+python manage.py migrate
+
+Create Superuser (Optional)
+python manage.py createsuperuser
+
+Run the Server
+python manage.py runserver
+
+
+Visit http://127.0.0.1:8000/
+ to see the app.
+
+Usage
+
+Register multiple users to simulate social interaction.
+
+Upload posts with attachments (images, PDFs).
+
+Like and comment on posts.
+
+Reset passwords using the “Forgot Password” link.
+
+Explore other user profiles and posts.
+
+Contributing
+
+Contributions are welcome! You can:
+
+Submit feedback: Suggestions for UX/UI improvements or new features.
+
+Collaborate: Contact me for joint projects or feature additions.
+
+Fix bugs or add features: Open issues or submit pull requests.
+
+Contact
+
+Musadiq Hussain
+
+Email: musadiqshahani@yahoo.com
+
+GitHub: Musadiq071
+
+LinkedIn: Musadiq Hussain
+
+License
+
+This project is licensed under the MIT License.
